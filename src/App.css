@@ -1,38 +1,212 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #ffc0cb, #ffb6c1);
+  overflow-x: hidden;
+}
+
+/* CENTER EVERYTHING */
+.container {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6pc;
   text-align: center;
+  padding: 20px;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Title */
+.title {
+  font-size: 2.5rem;
+  color: #b30059;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Rose slightly right */
+.rose {
+  width: 120px;
+  transform: translateX(20px);
+}
+
+/* Message */
+.please-text {
+  font-size: 1.5rem;
+  color: #b30059;
+  font-weight: bold;
+  animation: slideIn 0.6s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Buttons */
+.button-group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yes-btn {
+  background: #ff4d88;
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 0, 80, 0.4);
+}
+
+.no-btn {
+  background: #555;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 182, 193, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
+.modal-content {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  max-width: 350px;
+  width: 90%;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.twirl {
+  margin-top: 15px;
+  animation: twirl 2s infinite alternate ease-in-out;
+}
+
+@keyframes twirl {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .rose {
+    width: 10pc;
+    height: 10pc;
+  }
+
+  .please-text {
+    font-size: 1.2rem;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+
+
+.container::before {
+      margin-top: -30px;
+  content: "💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞💖 💕 💘 💗 💓 💞   💘 💗 💓 💞";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 3rem;
+  opacity: 0.08;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: floatHearts 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatHearts {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50px); }
+}
+
+
+.rose {
+  width: 120px;
+  transform: translateX(20px);
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 25px rgba(255, 0, 100, 0.4),
+    0 0 20px rgba(255, 105, 180, 0.5);
+
+  transition: transform 0.3s ease;
+}
+
+.rose:hover {
+  transform: translateX(20px) scale(1.05);
+}
+
+
+.small-image {
+    width: 45px;
+    border-radius: 10px;
+    margin-top: -80px;
+  animation: fadeInScale 0.8s ease forwards;
+
+  box-shadow: 0 8px 20px rgba(255, 0, 120, 0.3);
+}
+
+@keyframes fadeInScale {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
+}
+
+
+
+
+.harshit{
+  border: 1px solid red;
+    height: 20pc;
+    width: 12pc;
+    padding: 20px;
 }
