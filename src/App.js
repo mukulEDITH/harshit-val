@@ -13,7 +13,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
   const [showSmallImage, setShowSmallImage] = useState(false);
-  const [text, setText] = useState("");
+
 
   const audioRef = useRef(null);
 
@@ -37,7 +37,7 @@ useEffect(() => {
 // Show text + image after 5 seconds
 useEffect(() => {
   const timer = setTimeout(() => {
-    setText("I knew you would say yes ❤️");
+   
     setShowSmallImage(true);
   }, 5000);
 
